@@ -84,14 +84,35 @@ function isSameSet(list1,list2)
     return areEqual(list1,list2);
 }
 
-function range(start,end,step = 1)
-{
+function range(start,end,step = 1) {
     var result = [];
-    for(var index = start;index < end;index = index + step)
-        result.push(index)
+    for(var index = start;index != end - (end %step);index = index + step) {
+        if(step < 0 && index < end) {
+            index = end;
+            break;
+        }
+        result.push(index);
+    }
+    if(index < end)
+        result.push(index);
     return result;
+}
+
+function getElementsButFirst(list1)
+{
+    return list1.slice(1,list1.length);
+}
+
+function getElementsButLast(list1)
+{
+    return list1.slice(0,list1.length - 1);
 }
 
 
 
-module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range};
+
+
+
+
+module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
+getElementsButLast};
