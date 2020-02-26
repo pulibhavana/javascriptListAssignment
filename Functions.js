@@ -1,3 +1,4 @@
+const functions = require('/users/plbhavana/javascriptAssignment/ReverseList.js')
 function union(list1, list2)
 {
     return list1.concat(list2);
@@ -57,7 +58,7 @@ function isSubset(list1,list2)
 
 function isReverse(list1,list2)
 {
-    var reverselist = list1.reverse();
+    var reverselist = functions.reverse(list1);
     var result = areEqual(reverselist,list2);
     return result;
 }
@@ -74,6 +75,15 @@ function areEqual(list1,list2)
     return true;
 }
 
+function isSameSet(list1,list2)
+{
+    if(list1.length != list2.length)
+        return false;
+    list1 = list1.sort();
+    list2 = list2.sort();
+    return areEqual(list1,list2);
+}
 
 
-module.exports = {union,intersection,difference,isSubset,isReverse,areEqual};
+
+module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet};
