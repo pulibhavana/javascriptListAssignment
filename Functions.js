@@ -179,6 +179,17 @@ function rotateLeft(list,num)
     return result;
 }
 
+function remove(list , num)
+{
+    var result = [];
+    for(var index = 0;index < list.length;index++)
+    {
+        if(list[index] != num)
+            result.push(list[index]);
+    }
+    return result;
+}
+
 
 
 
@@ -189,4 +200,4 @@ function rotateLeft(list,num)
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
 getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct,repeat,counttheelement,rotateRight
-,rotateLeft};
+,rotateLeft,remove};
