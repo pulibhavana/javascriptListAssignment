@@ -13,7 +13,10 @@ function main()
     console.log("The list2 is subset of list1 " +functions.isSubset(list1,list2));
 
     console.log("The list2 is reverse of list1 "+ functions.isReverse(list1,list2));
-    
+    console.log("The list1 is reverse of list2 "+ functions.isReverse(list2,list1));
+
+    console.log("both the lists are equal "+ functions.areEqual(list1,list2));
+
 
 
 
