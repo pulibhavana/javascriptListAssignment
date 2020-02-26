@@ -37,6 +37,8 @@ function main()
 
     console.log("the given elements in the list are distinct " +functions.isDistinct(list1));
 
+    console.log("the result is" +functions.repeat('a',5));
+
 
 }
 main();
