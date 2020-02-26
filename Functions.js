@@ -84,6 +84,14 @@ function isSameSet(list1,list2)
     return areEqual(list1,list2);
 }
 
+function range(start,end,step = 1)
+{
+    var result = [];
+    for(var index = start;index < end;index = index + step)
+        result.push(index)
+    return result;
+}
 
 
-module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet};
+
+module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range};
