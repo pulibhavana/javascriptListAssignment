@@ -45,7 +45,7 @@ function difference(list1,list2) {
     return result
 }
 
-function issubset(list1,list2)
+function isSubset(list1,list2)
 {
     for(item of list2)
     {
@@ -55,6 +55,25 @@ function issubset(list1,list2)
     return true;
 }
 
+function isReverse(list1,list2)
+{
+    var reverselist = list1.reverse();
+    var result = areEqual(reverselist,list2);
+    return result;
+}
+
+function areEqual(list1,list2)
+{
+    if(list1.length != list2.length)
+        return false;
+    for(var index = 0;index < list1.length ; index++)
+    {
+        if(list1[index] != list2[index])
+            return false;
+    }
+    return true;
+}
 
 
-module.exports = {union,intersection,difference,issubset};
+
+module.exports = {union,intersection,difference,isSubset,isReverse,areEqual};
