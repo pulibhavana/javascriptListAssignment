@@ -136,6 +136,16 @@ function drop(list ,num)
     return list.slice(num,list.length);
 }
 
+function isDistinct(list)
+{
+    for(item of list){
+        result = counttheelement(item ,list)
+        if(result > 1)
+            return false;
+    }
+    return true;
+}
+
 
 
 
@@ -143,4 +153,4 @@ function drop(list ,num)
 
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
-getElementsButLast,getFirstNElements,getNthElements,cycle,drop};
+getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct};
