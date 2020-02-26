@@ -32,5 +32,7 @@ function main()
     console.log("get the elements " +functions.getNthElements(list1 ,2));
 
     console.log("cycle the elements " +functions.cycle(list1,8))
+
+    console.log("drop the elements " + functions.drop(list1,3));
 }
 main();
