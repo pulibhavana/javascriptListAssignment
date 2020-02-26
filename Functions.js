@@ -113,6 +113,25 @@ function getFirstNElements(list1,num)
     return list1.slice(0,num);
 }
 
+function getNthElements(list1 ,num)
+{
+    var result = []
+    for(var index = 0;index < list1.length;index = index + num)
+        result.push(list1[index]);
+    return result;
+}
+
+function cycle(list,num)
+{
+    result = [],listindex = 0;
+    for(var index = 0;index < num;index++){
+        result[index] = list[listindex % list.length];
+        listindex = listindex + 1;
+    }
+    return result;
+
+}
+
 
 
 
@@ -120,4 +139,4 @@ function getFirstNElements(list1,num)
 
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
-getElementsButLast,getFirstNElements};
+getElementsButLast,getFirstNElements,getNthElements,cycle};
