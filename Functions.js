@@ -146,6 +146,14 @@ function isDistinct(list)
     return true;
 }
 
+function repeat(element,number)
+{
+    result = [];
+    for(var index = 0;index < number;index++)
+        result[index] = element;
+    return result;
+}
+
 
 
 
@@ -153,4 +161,4 @@ function isDistinct(list)
 
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
-getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct};
+getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct,repeat};
