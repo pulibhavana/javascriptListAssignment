@@ -1,7 +1,7 @@
 const functions = require('./Functions.js');
 function main()
 {
-    let list1 = [1,2,3,4,5];
+    let list1 = [1,2,3,4,5,5];
     let list2 = [3,2,1];
 
     console.log("The union of two lists "+functions.union(list1,list2));
@@ -34,5 +34,9 @@ function main()
     console.log("cycle the elements " +functions.cycle(list1,8))
 
     console.log("drop the elements " + functions.drop(list1,3));
+
+    console.log("the given elements in the list are distinct " +functions.isDistinct(list1));
+
+
 }
 main();
