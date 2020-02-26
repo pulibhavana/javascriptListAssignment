@@ -2,7 +2,7 @@ const functions = require('./Functions.js');
 function main()
 {
     let list1 = [1,2,3,];
-    let list2 = [3,2,1];
+    let list2 = [3,2,1,4];
 
     console.log("The union of two lists "+functions.union(list1,list2));
 
@@ -15,9 +15,9 @@ function main()
     console.log("The list2 is reverse of list1 "+ functions.isReverse(list1,list2));
     console.log("The list1 is reverse of list2 "+ functions.isReverse(list2,list1));
 
-    console.log("both the lists are equal "+ functions.areEqual(list1,list2));
+    console.log("are both the lists are equal "+ functions.areEqual(list1,list2));
 
-
+    console.log("are both the lists are same " + functions.isSameSet(list1,list2));
 
 
 
