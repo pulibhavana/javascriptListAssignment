@@ -35,4 +35,16 @@ function update(occurance , item)
     return newlist;
 }
 
-module.exports = {union,intersection};
+function differenece(list1,list2) {
+    var result = [];
+    for (item of list1) {
+        var present = list2.includes(item);
+        if (!present)
+            result.push(item);
+    }
+    return result
+}
+
+
+
+module.exports = {union,intersection,differenece};
