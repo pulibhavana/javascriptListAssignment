@@ -129,7 +129,11 @@ function cycle(list,num)
         listindex = listindex + 1;
     }
     return result;
+}
 
+function drop(list ,num)
+{
+    return list.slice(num,list.length);
 }
 
 
@@ -139,4 +143,4 @@ function cycle(list,num)
 
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
-getElementsButLast,getFirstNElements,getNthElements,cycle};
+getElementsButLast,getFirstNElements,getNthElements,cycle,drop};
