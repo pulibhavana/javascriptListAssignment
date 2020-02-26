@@ -39,6 +39,8 @@ function main()
 
     console.log("the result is" +functions.repeat('a',5));
 
+    console.log("The frequency of the element " +functions.counttheelement(5,list1));
+
 
 }
 main();
