@@ -108,6 +108,11 @@ function getElementsButLast(list1)
     return list1.slice(0,list1.length - 1);
 }
 
+function getFirstNElements(list1,num)
+{
+    return list1.slice(0,num);
+}
+
 
 
 
@@ -115,4 +120,4 @@ function getElementsButLast(list1)
 
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
-getElementsButLast};
+getElementsButLast,getFirstNElements};
