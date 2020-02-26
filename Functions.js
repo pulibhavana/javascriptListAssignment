@@ -35,7 +35,7 @@ function update(occurance , item)
     return newlist;
 }
 
-function differenece(list1,list2) {
+function difference(list1,list2) {
     var result = [];
     for (item of list1) {
         var present = list2.includes(item);
@@ -45,6 +45,16 @@ function differenece(list1,list2) {
     return result
 }
 
+function issubset(list1,list2)
+{
+    for(item of list2)
+    {
+        if(!list1.includes(item))
+            return false;
+    }
+    return true;
+}
 
 
-module.exports = {union,intersection,differenece};
+
+module.exports = {union,intersection,difference,issubset};
