@@ -41,6 +41,10 @@ function main()
 
     console.log("The frequency of the element " +functions.counttheelement(5,list1));
 
+    console.log("the list after performing rotateright is " +functions.rotateRight(list1,2))
+
+    console.log("The list after performing the rotateleft " +functions.rotateLeft(list1,2))
+
 
 }
 main();
