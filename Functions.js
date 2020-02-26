@@ -154,6 +154,33 @@ function repeat(element,number)
     return result;
 }
 
+function rotateRight(list,num)
+{
+    var result = [],temp = num;
+    while(num != 0)
+    {
+        result.push(list[list.length - num]);
+        num = num -1;
+    }
+    result = result.concat(list.slice(0,list.length - (temp)));
+    return result;
+}
+
+function rotateLeft(list,num)
+{
+    var result = [],temp = 0;
+    result = result.concat(list.slice(num,list.length));
+    while(num != 0)
+    {
+        result.push(list[temp++]);
+        num = num -1;
+    }
+
+    return result;
+}
+
+
+
 
 
 
@@ -161,4 +188,5 @@ function repeat(element,number)
 
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
-getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct,repeat};
+getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct,repeat,counttheelement,rotateRight
+,rotateLeft};
