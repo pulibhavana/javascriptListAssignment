@@ -1,7 +1,7 @@
 const functions = require('./Functions.js');
 function main()
 {
-    let list1 = [1,2,3];
+    let list1 = [1,2,3,4,5];
     let list2 = [3,2,1];
 
     console.log("The union of two lists "+functions.union(list1,list2));
@@ -28,5 +28,9 @@ function main()
     console.log("Get all elements but last " +functions.getElementsButLast(list1));
 
     console.log("Get the first n elements " +functions.getFirstNElements(list1,2));
+
+    console.log("get the elements " +functions.getNthElements(list1 ,2));
+
+    console.log("cycle the elements " +functions.cycle(list1,8))
 }
 main();
