@@ -2,7 +2,7 @@ const functions = require('./Functions.js');
 function main()
 {
     let list1 = [1,2,3,];
-    let list2 = [3,2,1,4];
+    let list2 = [3,2,1];
 
     console.log("The union of two lists "+functions.union(list1,list2));
 
@@ -19,7 +19,8 @@ function main()
 
     console.log("are both the lists are same " + functions.isSameSet(list1,list2));
 
-
-
+    console.log("The range of numbers are " +functions.range(0,5));
+    console.log("The range of numbers are " +functions.range(0,5,2));
+    console.log("The range of numbers are " +functions.range(100,1));
 }
 main()
