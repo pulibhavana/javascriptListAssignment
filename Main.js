@@ -26,5 +26,7 @@ function main()
     console.log("Get all elements but first " +functions.getElementsButFirst(list1));
 
     console.log("Get all elements but last " +functions.getElementsButLast(list1));
+
+    console.log("Get the first n elements " +functions.getFirstNElements(list1,2));
 }
 main();
