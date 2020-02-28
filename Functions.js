@@ -1,20 +1,22 @@
-const functions = require('/users/plbhavana/javascriptAssignment/ReverseList.js')
+const functions = require('/users/plbhavana/javascriptAssignment/ReverseList.js');
+
 function union(list1, list2)
 {
     return list1.concat(list2);
 }
+
 function intersection(list1,list2) {
-    let commonelements = [];
-    let uniqueelements = new Set(list1);
-    for(item of uniqueelements) {
-        var list1count = counttheelement(item,list1),list2count = counttheelement(item,list2);
-        var occurance = Math.min(list1count,list2count)
-        commonelements = commonelements.concat(update(occurance, item));
+    let commonElements = [];
+    let uniqueElements = new Set(list1);
+    for(let item of uniqueElements) {
+        let list1count = countTheElement(item,list1),list2count = countTheElement(item,list2);
+        let occurrence = Math.min(list1count,list2count);
+        commonElements = commonElements.concat(update(occurrence, item));
     }
-    return commonelements;
+    return commonElements;
 }
 
-function counttheelement(element, list)
+function countTheElement(element, list)
 {
     let count = 0;
     for(let index = 0;index < list.length;index++)
@@ -25,63 +27,41 @@ function counttheelement(element, list)
     return count;
 }
 
-function update(occurance , item)
+function update(occurence , item)
 {
     var newlist = []
-    while(occurance != 0)
+    while(occurence != 0)
     {
         newlist.push(item);
-        occurance = occurance - 1;
+        occurence = occurence - 1;
     }
     return newlist;
 }
 
-function difference(list1,list2) {
-    var result = [];
-    for (item of list1) {
-        var present = list2.includes(item);
-        if (!present)
-            result.push(item);
-    }
-    return result
+function difference(element)
+{
+    if(!this.includes(element))
+        return element;
 }
 
-function isSubset(list1,list2)
+function isSubset(element)
 {
-    for(item of list2)
-    {
-        if(!list1.includes(item))
-            return false;
-    }
-    return true;
+    return (this.includes(element));
 }
 
-function isReverse(list1,list2)
+function isReverse(element, index)
 {
-    var reverselist = functions.reverse(list1);
-    var result = areEqual(reverselist,list2);
-    return result;
+    return element == this[this.length - (index + 1)]
 }
 
-function areEqual(list1,list2)
+function areEqual(element , index)
 {
-    if(list1.length != list2.length)
-        return false;
-    for(var index = 0;index < list1.length ; index++)
-    {
-        if(list1[index] != list2[index])
-            return false;
-    }
-    return true;
+    return (element == this[index]);
 }
 
-function isSameSet(list1,list2)
+function isSameSet(element)
 {
-    if(list1.length != list2.length)
-        return false;
-    list1 = list1.sort();
-    list2 = list2.sort();
-    return areEqual(list1,list2);
+    return (this.includes(element));
 }
 
 function range(start,end,step = 1) {
@@ -113,12 +93,10 @@ function getFirstNElements(list1,num)
     return list1.slice(0,num);
 }
 
-function getNthElements(list1 ,num)
+function getNthElements(element,index)
 {
-    var result = []
-    for(var index = 0;index < list1.length;index = index + num)
-        result.push(list1[index]);
-    return result;
+    if(index % this == 0)
+        return element;
 }
 
 function cycle(list,num)
@@ -136,21 +114,19 @@ function drop(list ,num)
     return list.slice(num,list.length);
 }
 
-function isDistinct(list)
+function isDistinct(element,index,list1)
 {
-    for(item of list){
-        result = counttheelement(item ,list)
-        if(result > 1)
-            return false;
-    }
-    return true;
+    var temp = list1.slice(index+1,list1.length)
+    return !(temp.includes(element));
 }
 
 function repeat(element,number)
 {
     result = [];
-    for(var index = 0;index < number;index++)
-        result[index] = element;
+    while(number != 0) {
+        result.push(element);
+        number--;
+    }
     return result;
 }
 
@@ -175,19 +151,12 @@ function rotateLeft(list,num)
         result.push(list[temp++]);
         num = num -1;
     }
-
     return result;
 }
 
-function remove(list , num)
+function remove(element)
 {
-    var result = [];
-    for(var index = 0;index < list.length;index++)
-    {
-        if(list[index] != num)
-            result.push(list[index]);
-    }
-    return result;
+    return element != this;
 }
 
 
@@ -199,5 +168,5 @@ function remove(list , num)
 
 
 module.exports = {union,intersection,difference,isSubset,isReverse,areEqual,isSameSet,range,getElementsButFirst,
-getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct,repeat,counttheelement,rotateRight
+getElementsButLast,getFirstNElements,getNthElements,cycle,drop,isDistinct,repeat,countTheElement,rotateRight
 ,rotateLeft,remove};
