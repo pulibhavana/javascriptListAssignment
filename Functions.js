@@ -5,15 +5,14 @@ function union(list1, list2)
     return list1.concat(list2);
 }
 
-function intersection(list1,list2) {
-    let commonElements = [];
-    let uniqueElements = new Set(list1);
-    for(let item of uniqueElements) {
-        let list1count = countTheElement(item,list1),list2count = countTheElement(item,list2);
-        let occurrence = Math.min(list1count,list2count);
-        commonElements = commonElements.concat(update(occurrence, item));
+function intersection(element)
+{
+    if(this.includes(element))
+    {
+        var index = this.indexOf(element);
+        this.splice(index,1);
+        return element;
     }
-    return commonElements;
 }
 
 function countTheElement(element, list)
@@ -27,21 +26,13 @@ function countTheElement(element, list)
     return count;
 }
 
-function update(occurence , item)
-{
-    var newlist = []
-    while(occurence != 0)
-    {
-        newlist.push(item);
-        occurence = occurence - 1;
-    }
-    return newlist;
-}
-
 function difference(element)
 {
     if(!this.includes(element))
         return element;
+    var index = this.indexOf(element);
+    this.splice(index,1);
+
 }
 
 function isSubset(element)
@@ -61,7 +52,13 @@ function areEqual(element , index)
 
 function isSameSet(element)
 {
-    return (this.includes(element));
+    if(this.includes(element))
+    {
+        var index = this.indexOf(element);
+        this.splice(index,1);
+        return true;
+    }
+    return false;
 }
 
 function range(start,end,step = 1) {

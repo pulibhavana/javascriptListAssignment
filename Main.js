@@ -1,14 +1,14 @@
 const functions = require('./Functions.js');
 function main()
 {
-    let list1 = [1,2,3,4,3];
-    let list2 = [3,2,1];
+    let list1 = [3,2,1];
+    let list2 = [1,2,3];
 
-    console.log("The union of two lists "+functions.union(list1,list2));
+    console.log("The union of two lists "+functions.union([1,2,3],[2,3,4]));
 
-    console.log("The intersection of two lists " + functions.intersection(list1,list2));
+    console.log("The intersection of two lists " + [2,2,2].filter(functions.intersection,[1,2,2]));
 
-    console.log("Difference: " + list1.filter(functions.difference, list2));
+    console.log("Difference: " + [2,2,2].filter(functions.difference, [1,2,2]));
 
     console.log("The list2 is subset of list1 " + list2.every(functions.isSubset,list1));
 
