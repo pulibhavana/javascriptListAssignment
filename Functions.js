@@ -119,12 +119,8 @@ function isDistinct(element,index,list1)
 
 function repeat(element,number)
 {
-    result = [];
-    while(number != 0) {
-        result.push(element);
-        number--;
-    }
-    return result;
+   var array = new Array(number);
+   return array.fill(element);
 }
 
 function rotateRight(list,num)
